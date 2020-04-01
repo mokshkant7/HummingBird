@@ -12,6 +12,9 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   animated_text_kit: ^2.0.0
+  firebase_core: ^0.4.4+3
+  firebase_auth: ^0.15.5+3
+  cloud_firestore: ^0.13.4+2
 
 
 dev_dependencies:
