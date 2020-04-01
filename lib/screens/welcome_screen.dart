@@ -17,7 +17,7 @@ class _WelcomeScreenState extends State<
     with
         SingleTickerProviderStateMixin {
   AnimationController controller;
-  Animation animation;
+  //Animation animation;
 
   @override
   void initState() {
@@ -28,8 +28,8 @@ class _WelcomeScreenState extends State<
       vsync: this,
     );
 
-    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
-        .animate(controller);
+    //animation =
+    //    ColorTween(begin: Colors.white, end: Colors.white).animate(controller);
     controller.forward();
     controller.addListener(() {
       setState(() {});
@@ -45,7 +45,7 @@ class _WelcomeScreenState extends State<
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: animation.value,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
