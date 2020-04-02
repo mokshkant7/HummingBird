@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -53,42 +54,51 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: Colors.teal,
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Stack(
+          fit: StackFit.expand,
           children: <Widget>[
-            MessagesStream(),
-            Container(
-              decoration: kMessageContainerDecoration,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: TextField(
-                      controller: messageTextController,
-                      onChanged: (value) {
-                        messageText = value;
-                        //Do something with the user input.
-                      },
-                      decoration: kMessageTextFieldDecoration,
-                    ),
+            Image.asset(
+              'images/Back.png',
+              fit: BoxFit.cover,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                MessagesStream(),
+                Container(
+                  decoration: kMessageContainerDecoration,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: TextField(
+                          controller: messageTextController,
+                          onChanged: (value) {
+                            messageText = value;
+                            //Do something with the user input.
+                          },
+                          decoration: kMessageTextFieldDecoration,
+                        ),
+                      ),
+                      FlatButton(
+                        onPressed: () {
+                          messageTextController.clear();
+                          _firestore.collection('messages').add({
+                            'text': messageText,
+                            'sender': loggedInUser.email,
+                          });
+                          //Implement send functionality.
+                        },
+                        child: Text(
+                          'Send',
+                          style: kSendButtonTextStyle,
+                        ),
+                      ),
+                    ],
                   ),
-                  FlatButton(
-                    onPressed: () {
-                      messageTextController.clear();
-                      _firestore.collection('messages').add({
-                        'text': messageText,
-                        'sender': loggedInUser.email,
-                      });
-                      //Implement send functionality.
-                    },
-                    child: Text(
-                      'Send',
-                      style: kSendButtonTextStyle,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
@@ -155,8 +165,9 @@ class MessageBubble extends StatelessWidget {
           Text(
             sender,
             style: TextStyle(
-              fontSize: 12.0,
-              color: Colors.blueGrey,
+              fontSize: 14.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
           Material(
@@ -169,8 +180,9 @@ class MessageBubble extends StatelessWidget {
                       topRight: Radius.circular(30.0),
                       bottomLeft: Radius.circular(30.0),
                       bottomRight: Radius.circular(30.0)),
-              elevation: 5.0,
-              color: isMe ? Colors.lightBlueAccent : Colors.green,
+              elevation: 15.0,
+              color:
+                  isMe ? Colors.lightBlueAccent : Colors.lightGreenAccent[700],
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 20.0),
@@ -178,7 +190,7 @@ class MessageBubble extends StatelessWidget {
                   text,
                   style: TextStyle(
                     color: isMe ? Colors.white : Colors.white,
-                    fontSize: 15.0,
+                    fontSize: 17.0,
                   ),
                 ),
               )),
