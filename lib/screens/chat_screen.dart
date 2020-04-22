@@ -159,7 +159,8 @@ class MessageBubble extends StatelessWidget {
   final bool isMe;
   @override
   Widget build(BuildContext context) {
-    //List<String> x = text.split('@');
+    List<String> x = sender.split('@');
+    String displayName = x[0];
     return Padding(
       padding: EdgeInsets.all(10.0),
       child: Column(
@@ -167,9 +168,9 @@ class MessageBubble extends StatelessWidget {
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            sender,
+            displayName.toUpperCase(),
             style: TextStyle(
-              fontSize: 14.0,
+              fontSize: 12.0,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),

@@ -17,6 +17,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   bool showSpinner = false;
   String email;
   String password;
+  String name;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +52,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 },
                 decoration:
                     kTextFieldDecoration.copyWith(hintText: 'Enter your Email'),
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              TextField(
+                keyboardType: TextInputType.text,
+                textAlign: TextAlign.center,
+                onChanged: (value) {
+                  name = value;
+                  //Do something with the user input.
+                },
+                decoration:
+                    kTextFieldDecoration.copyWith(hintText: 'Enter your Name'),
               ),
               SizedBox(
                 height: 8.0,
