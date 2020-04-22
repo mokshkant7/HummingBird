@@ -50,16 +50,19 @@ class _ChatScreenState extends State<ChatScreen> {
                 //Implement logout functionality
               }),
         ],
-        title: Text('️Chat'),
+        title: Text('️Group Chat'),
         backgroundColor: Colors.teal,
       ),
       body: SafeArea(
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
-            Image.asset(
-              'images/Back.png',
-              fit: BoxFit.cover,
+            Opacity(
+              opacity: 0.2,
+              child: Image.asset(
+                'images/Back.png',
+                fit: BoxFit.cover,
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -156,6 +159,7 @@ class MessageBubble extends StatelessWidget {
   final bool isMe;
   @override
   Widget build(BuildContext context) {
+    //List<String> x = text.split('@');
     return Padding(
       padding: EdgeInsets.all(10.0),
       child: Column(
