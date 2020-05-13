@@ -43,6 +43,14 @@ class _ChatScreenState extends State<ChatScreen> {
         leading: null,
         actions: <Widget>[
           IconButton(
+            icon: Icon(Icons.phone),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.video_call),
+            onPressed: () {},
+          ),
+          IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
                 _auth.signOut();
@@ -58,7 +66,7 @@ class _ChatScreenState extends State<ChatScreen> {
           fit: StackFit.expand,
           children: <Widget>[
             Opacity(
-              opacity: 0.2,
+              opacity: 0.15,
               child: Image.asset(
                 'images/Back2.png',
                 fit: BoxFit.cover,
@@ -74,6 +82,12 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
+                      IconButton(
+                          icon: Icon(Icons.add),
+                          color: Colors.teal,
+                          onPressed: () {
+                            //Implement send functionality.
+                          }),
                       Expanded(
                         child: TextField(
                           controller: messageTextController,
@@ -186,7 +200,7 @@ class MessageBubble extends StatelessWidget {
                       bottomLeft: Radius.circular(30.0),
                       bottomRight: Radius.circular(30.0)),
               elevation: 15.0,
-              color: isMe ? Color(0xFF79C7A9) : Color(0xFFFAD09D),
+              color: isMe ? Color(0xFF79C7A9) : Color(0xFFFAC989),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 20.0),
