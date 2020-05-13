@@ -60,7 +60,7 @@ class _ChatScreenState extends State<ChatScreen> {
             Opacity(
               opacity: 0.2,
               child: Image.asset(
-                'images/Back.png',
+                'images/Back2.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -186,8 +186,7 @@ class MessageBubble extends StatelessWidget {
                       bottomLeft: Radius.circular(30.0),
                       bottomRight: Radius.circular(30.0)),
               elevation: 15.0,
-              color:
-                  isMe ? Colors.lightBlueAccent : Colors.lightGreenAccent[700],
+              color: isMe ? Color(0xFF79C7A9) : Color(0xFFFAD09D),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 20.0),

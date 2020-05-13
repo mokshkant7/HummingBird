@@ -46,54 +46,67 @@ class _WelcomeScreenState extends State<
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: SafeArea(
+        child: Stack(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Hero(
-                  tag: 'logo',
-                  child: Container(
-                    child: Image.asset('images/logo.png'),
-                    height: 80.0,
+            Opacity(
+              opacity: 0.4,
+              child: Image.asset(
+                'images/Back3.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Hero(
+                        tag: 'logo',
+                        child: Container(
+                          child: Image.asset('images/HummingBirdLogo.png'),
+                          height: 120.0,
+                        ),
+                      ),
+                      //ColorizeAnimatedTextKit(
+                      // text: ['HummingBird'],
+                      //textStyle: TextStyle(
+                      // fontSize: 40.0,
+                      //fontWeight: FontWeight.w900,
+                      //),
+                      //colors: [
+                      //Colors.teal,
+                      // Colors.blue,
+                      // Colors.blueAccent,
+                      // Colors.green,
+                      // Colors.lightGreenAccent,
+                      // Colors.teal,
+                      //],
+                      //)
+                    ],
                   ),
-                ),
-                ColorizeAnimatedTextKit(
-                  text: ['  HummingBird'],
-                  textStyle: TextStyle(
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.w900,
+                  SizedBox(
+                    height: 48.0,
                   ),
-                  colors: [
-                    Colors.teal,
-                    Colors.blue,
-                    Colors.blueAccent,
-                    Colors.green,
-                    Colors.lightGreenAccent,
-                    Colors.teal,
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 48.0,
-            ),
-            RoundedButton(
-              title: 'Log In',
-              colour: Colors.lightGreenAccent[700],
-              onPressed: () {
-                Navigator.pushNamed(context, LoginScreen.id);
-              },
-            ),
-            RoundedButton(
-              title: 'Register',
-              colour: Colors.blueAccent[400],
-              onPressed: () {
-                Navigator.pushNamed(context, RegistrationScreen.id);
-              },
+                  RoundedButton(
+                    title: 'Log In',
+                    colour: Color(0xFF69c78d),
+                    onPressed: () {
+                      Navigator.pushNamed(context, LoginScreen.id);
+                    },
+                  ),
+                  RoundedButton(
+                    title: 'Register',
+                    colour: Color(0xFF5784E6),
+                    onPressed: () {
+                      Navigator.pushNamed(context, RegistrationScreen.id);
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),
