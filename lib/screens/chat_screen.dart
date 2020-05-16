@@ -1,3 +1,4 @@
+import 'package:flash_chat/Calling/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
@@ -48,7 +49,10 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           IconButton(
             icon: Icon(Icons.video_call),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => IndexPage()));
+            },
           ),
           IconButton(
               icon: Icon(Icons.close),
@@ -215,6 +219,5 @@ class MessageBubble extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
