@@ -1,3 +1,3 @@
 # HummingBird Chat 
 
-![](/Users/mokshkant/AndroidStudioProjects/HummingBird/images/HummingBirdLogo)
+![](/Users/mokshkant/AndroidStudioProjects/HummingBird/images/HummingBirdLogo.png)
