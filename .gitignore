@@ -68,3 +68,7 @@
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+/Users/mokshkant/AndroidStudioProjects/HummingBird/android/app/google-services.json
+
+/Users/mokshkant/AndroidStudioProjects/HummingBird/lib/utils/settings.dart
