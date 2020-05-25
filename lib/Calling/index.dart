@@ -38,7 +38,7 @@ class IndexState extends State<IndexPage> {
           decoration: BoxDecoration(
               image: DecorationImage(
             alignment: Alignment(0.0, 1.0),
-            image: AssetImage('images/HummingBirdLogo.png'),
+            image: AssetImage('images/HummingBirdLogoss.png'),
           )),
           padding: const EdgeInsets.symmetric(horizontal: 20),
           height: 400,
