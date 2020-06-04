@@ -43,9 +43,8 @@ class _ChatScreenState extends State<ChatScreen> {
         centerTitle: true,
         leading: null,
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.phone),
-            onPressed: () {},
+          DropdownButton(
+            icon: Icon(Icons.expand_more),
           ),
           IconButton(
             icon: Icon(Icons.video_call),
@@ -90,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           icon: Icon(Icons.add),
                           color: Colors.teal,
                           onPressed: () {
-                            //Implement send functionality.
+                            //Implement add functionality.
                           }),
                       Expanded(
                         child: TextField(
