@@ -1,5 +1,7 @@
 # HummingBird Chat 
 
+![HummingBirdLogo](https://github.com/mokshkant7/HummingBird/blob/master/images/HummingBirdLogo.png)
+
 To run this project you have to have either Android Studio or VsCode setup along with Flutter SDK.
 
 In case you don't have it you can click on the following links.
